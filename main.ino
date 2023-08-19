@@ -4,7 +4,7 @@
 
   @author Pranay Pawar
   @version 0.1
-  Left hand following algorithm is being used
+  LSRB algorithm is being used
 */
 
 // *** Pins ***
@@ -55,7 +55,7 @@ void setup() {
 void loop() {
   // Check walls
   walls();
-  // Left hand rule algorithm
+  // LSRB algorithm
   if (wall_left == 1 && wall_front == 0 && wall_right == 1) {
     move('F'); // Only straight
   } else if (wall_left == 0 && wall_front == 1 && wall_right == 1) {

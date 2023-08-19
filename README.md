@@ -37,12 +37,14 @@ Our approach for solving different conditions are:
 
 ![image](https://github.com/Bugaddr/micromouse/assets/75427894/a526c429-3939-4612-92c3-594908534565)
 
-**NOTE:** Checkout out our implementation [here](https://github.com/Bugaddr/micromouse/blob/1eb5d195d648a5aaba15163fa380dea580c3d1dc/main.ino#L58)
+**NOTE:** Checkout our implemented code [here](https://github.com/Bugaddr/micromouse/blob/main/main.ino)
 
 ## Tinkercad design & circuit diagram
 
+- Checkout [circuit diagram pdf](https://github.com/Bugaddr/micromouse/blob/main/circuit.pdf)
+- Checkout [tinkercad circuit design](https://www.tinkercad.com/things/jYmtUu4jmhq-micromousev1)
+
 [![Tinkercad design](https://github.com/Bugaddr/micromouse/assets/75427894/1b375f9f-6475-4405-87c7-a5234094cdfe)](https://github.com/Bugaddr/micromouse/blob/main/assets/75427894/1b375f9f-6475-4405-87c7-a5234094cdfe)
-- Checkout [circuit diagram](https://github.com/Bugaddr/micromouse/blob/main/circuit.pdf) pdf
 
 ## Reference
 1. [How to Build an Arduino-based Maze-Solving Robot](https://maker.pro/arduino/projects/how-to-build-an-arduino-based-maze-solving-robot)
@@ -51,8 +53,11 @@ Our approach for solving different conditions are:
 4. [Maze-Solving Robot with 3 IR Sensors](https://www.hackster.io/Varun2905/maze-solving-robot-3-ir-sensors-9ada3b)
 5. [Coding a Line-Follower Robot using LSRB and Finding the Shortest Path](https://towardinfinity.medium.com/coding-a-line-follower-robot-using-lsrb-and-finding-the-shortest-path-d906ffec71d)
 
+## Special thanks
+1. [RCOEM](https://rknec.edu/) Robotics & Aviation club
+
 ## Contributing
 This project is open source and we welcome contributions from everyone. If you have any suggestions or improvements, please feel free to open an issue or submit a pull request.
 
-- Thank you for your interest in micromouse!
-- I hope this helps!
+- Thank you for your interest in micromouse !
+- I hope this helps !

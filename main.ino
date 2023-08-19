@@ -71,9 +71,14 @@ void loop() {
   } else if (wall_left == 1 && wall_front == 1 && wall_right == 1) {
     move('L'); // U-turn at dead-end
   } else if (wall_left == 0 && wall_front == 0 && wall_right == 0) {
-    move('L'); // 4 Lane intersection [Can be checked by moving further]
-  } else {
-    move('S');
+    move('F'); // 4-Lane intersection [Can be checked by moving further]
+    delay(30); // Uncalibrated
+    move('S'); // Stop
+    if (wall_left == 0 && wall_front == 0 && wall_right == 0) {
+      Serial.println("END OF MAZE");
+    } else {
+      move('L'); // 4-Way intersection if left or right value changes
+    }
   }
 }
 

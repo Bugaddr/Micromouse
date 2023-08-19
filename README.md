@@ -32,17 +32,27 @@ Our approach for solving different conditions are:
 5. **Left T Intersection (straight or left):** The robot will take a left turn.
 6. **Right T Intersection (straight or right):** The robot will take a left turn.
 7. **Dead End:** The robot will take a U-turn.
-8. **Four lane intersection (Cross):** The robot will go little further, if sensors still give same output then its dead-end[9] else it will go left
+8. **Four lane intersection (Cross):** The robot will go little further, if sensors still give same output then its end of maze else it will go left
 9. **End of Maze:** The robot will stop.
 
 ![image](https://github.com/Bugaddr/micromouse/assets/75427894/a526c429-3939-4612-92c3-594908534565)
 
 **NOTE:** Checkout out our implementation [here](https://github.com/Bugaddr/micromouse/blob/1eb5d195d648a5aaba15163fa380dea580c3d1dc/main.ino#L58)
 
-## Tinkercad design
+## Tinkercad design & circuit diagram
 
 [![Tinkercad design](https://github.com/Bugaddr/micromouse/assets/75427894/1b375f9f-6475-4405-87c7-a5234094cdfe)](https://github.com/Bugaddr/micromouse/blob/main/assets/75427894/1b375f9f-6475-4405-87c7-a5234094cdfe)
+- Checkout [circuit diagram](https://github.com/Bugaddr/micromouse/blob/main/circuit.pdf) pdf
 
-## Circuit diagram
+## Reference
+1. [How to Build an Arduino-based Maze-Solving Robot](https://maker.pro/arduino/projects/how-to-build-an-arduino-based-maze-solving-robot)
+2. [Maze-Solving Algorithm](https://en.wikipedia.org/wiki/Maze-solving_algorithm)
+3. [Maze Generation Algorithm](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
+4. [Maze-Solving Robot with 3 IR Sensors](https://www.hackster.io/Varun2905/maze-solving-robot-3-ir-sensors-9ada3b)
+5. [Coding a Line-Follower Robot using LSRB and Finding the Shortest Path](https://towardinfinity.medium.com/coding-a-line-follower-robot-using-lsrb-and-finding-the-shortest-path-d906ffec71d)
 
-Checkout [circuit diagram](https://github.com/Bugaddr/micromouse/blob/main/circuit.pdf) pdf
+## Contributing
+This project is open source and we welcome contributions from everyone. If you have any suggestions or improvements, please feel free to open an issue or submit a pull request.
+
+- Thank you for your interest in micromouse!
+- I hope this helps!

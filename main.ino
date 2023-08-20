@@ -162,10 +162,10 @@ void move(char move_dir) {
     digitalWrite(motor_R3, LOW);
     digitalWrite(motor_R4, HIGH);
   } else if (move_dir == 'B') {
-    digitalWrite(motor_L1, LOW);
-    digitalWrite(motor_L2, HIGH);
-    digitalWrite(motor_R3, LOW);
-    digitalWrite(motor_R4, HIGH);
+    digitalWrite(motor_L1, HIGH);
+    digitalWrite(motor_L2, LOW);
+    digitalWrite(motor_R3, HIGH);
+    digitalWrite(motor_R4, LOW);
   } else if (move_dir == 'R') {
     digitalWrite(motor_L1, HIGH);
     digitalWrite(motor_L2, LOW);

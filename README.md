@@ -44,7 +44,8 @@ Our approach for solving different conditions are:
 - Checkout [circuit diagram pdf](https://github.com/Bugaddr/micromouse/blob/main/circuit.pdf)
 - Checkout [tinkercad circuit design](https://www.tinkercad.com/things/jYmtUu4jmhq-micromousev1)
 
-[![Tinkercad design](https://github.com/Bugaddr/micromouse/assets/75427894/1b375f9f-6475-4405-87c7-a5234094cdfe)](https://github.com/Bugaddr/micromouse/blob/main/assets/75427894/1b375f9f-6475-4405-87c7-a5234094cdfe)
+![Tinkercad design](https://github.com/Bugaddr/micromouse/assets/75427894/fe5f8732-04f1-4f42-8f06-a89b17bf389a)
+
 
 ## Reference
 1. [How to Build an Arduino-based Maze-Solving Robot](https://maker.pro/arduino/projects/how-to-build-an-arduino-based-maze-solving-robot)

@@ -5,6 +5,7 @@
   @author Pranay Pawar
   @version 0.1
   LSRB algorithm is being used
+  https://github.com/bugaddr/micromouse
 */
 
 // *** Pins ***
@@ -32,7 +33,7 @@ void setup() {
   // Initialize buzzer
   pinMode(buzzer, OUTPUT);
 
-  // Initialize motors and keep all off
+  // Initialize motors
   pinMode(motor_L1, OUTPUT);
   pinMode(motor_L2, OUTPUT);
   pinMode(motor_R3, OUTPUT);
@@ -55,7 +56,7 @@ void setup() {
 void loop() {
   // Check walls
   walls();
-  // LSRB algorithm
+  // Move according LSRB algorithm
   if (wall_left == 1 && wall_front == 0 && wall_right == 1) {
     move('F'); // Only straight
   } else if (wall_left == 0 && wall_front == 1 && wall_right == 1) {
@@ -77,14 +78,13 @@ void loop() {
     if (wall_left == 0 && wall_front == 0 && wall_right == 0) {
       Serial.println("END OF MAZE");
     } else {
-      move('L'); // 4-Way intersection if left or right value changes
+      move('L'); // 4-Way intersection if sensor output changes
     }
   }
 }
 
 /**
   Triggers ultrasonic sensor sound wave
-
   @param trig_pin variable with pin name
 */
 void trigger(int trig_pin) {
@@ -100,7 +100,6 @@ void trigger(int trig_pin) {
 
 /**
   Checks if there is wall in surrounding
-
 */
 void walls() {
   // Calculate front sensor distance
@@ -131,52 +130,60 @@ void walls() {
     wall_back = 1;
   }
 
-  // Debug dist
-  Serial.print("L");
+  // Debug distance
+  Serial.print("\nL");
   Serial.print(dist_left);
   Serial.print(" F");
   Serial.print(dist_front);
   Serial.print(" R");
   Serial.print(dist_right);
   Serial.print(" B");
-  Serial.println(dist_back);
-  // Debug wall
+  Serial.print(dist_back);
+  // Debug walls
+  Serial.print(" ");
   Serial.print(wall_left);
   Serial.print(wall_front);
   Serial.print(wall_right);
-  Serial.println(wall_back);
+  Serial.print(wall_back);
 }
 
 /**
   Sends command to moters to move in specific direction
-
-  @param move_dir F for front, B for back etc etc.
+  @param move_dir F for front, B for back etc.
+  ** TODO: Add breakings before taking turn
 */
 void move(char move_dir) {
-  // Give beep
-  short_beep();
   // Turn
   if (move_dir == 'F') {
+    // Move forward
     digitalWrite(motor_L1, LOW);
     digitalWrite(motor_L2, HIGH);
     digitalWrite(motor_R3, LOW);
     digitalWrite(motor_R4, HIGH);
   } else if (move_dir == 'B') {
+    // Move backward
     digitalWrite(motor_L1, HIGH);
     digitalWrite(motor_L2, LOW);
     digitalWrite(motor_R3, HIGH);
     digitalWrite(motor_R4, LOW);
   } else if (move_dir == 'R') {
-    digitalWrite(motor_L1, HIGH);
-    digitalWrite(motor_L2, LOW);
-    digitalWrite(motor_R3, LOW);
-    digitalWrite(motor_R4, HIGH);
-  } else if (move_dir == 'L') {
+    // Give beep
+    tone(buzzer, 3500, 50);
+    // Move right
     digitalWrite(motor_L1, LOW);
     digitalWrite(motor_L2, HIGH);
     digitalWrite(motor_R3, HIGH);
     digitalWrite(motor_R4, LOW);
+  } else if (move_dir == 'L') {
+    // Give beep
+    tone(buzzer, 3500, 50);
+    // Move left
+    digitalWrite(motor_L1, HIGH);
+    digitalWrite(motor_L2, LOW);
+    digitalWrite(motor_R3, LOW);
+    digitalWrite(motor_R4, HIGH);
   } else if (move_dir == 'S') {
+    // Stop
     digitalWrite(motor_L1, LOW);
     digitalWrite(motor_L2, LOW);
     digitalWrite(motor_R3, LOW);
@@ -184,15 +191,6 @@ void move(char move_dir) {
   }
   delay(100); // Uncalibrated
   // Debug
-  Serial.print("Moving ");
-  Serial.println(move_dir);
-}
-
-/**
-   Short beep 50Ms at intersection point
-
-*/
-void short_beep() {
-  // Short beep 50Ms at intersection point
-  tone(buzzer, 3500, 50);
+  Serial.print(" Action: ");
+  Serial.print(move_dir);
 }
